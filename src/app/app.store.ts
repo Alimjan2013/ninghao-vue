@@ -1,4 +1,11 @@
 import { createStore } from 'vuex'
+import user,{UserState} from '@/user/user.store'
+
+export interface RootState{
+    name:string
+    loading:boolean
+    user?:UserState
+}
 
 const store = createStore({
     state: {
@@ -36,6 +43,9 @@ const store = createStore({
                 commit('setLoading', false)
             }, 2000)
         }
+    },
+    modules:{
+        user
     }
 })
 

@@ -3,6 +3,7 @@
   <h3>
     {{name}}
     <span v-if="loading">加载中</span>
+    {{user.currentUser}}
   </h3>
 </template>
 
@@ -20,18 +21,20 @@ export default {
       // appName:'name'
     // })
     ...mapGetters(['name'])
-    ...mapState(['loading'])
+    ...mapState(['loading','user'])
 
   },
   created(){
     // this.$store.dispatch('getName')
     this.getName()
+    this.getCurrentUser()
   }
 
   methods:{
     ...mapMutations(['setName']),
     ...mapActions({
-      getName:'getName'
+      getName:'getName',
+      getCurrentUser:'getCurrentUser'
     })
     onClickName(){
       if(this.$store.state.name ==='WebDev'){
