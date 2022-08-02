@@ -2,7 +2,7 @@ import { createStore} from 'vuex'
 
 const store = createStore({
     state:{
-        name:"WebDev"
+        name:"Name"
     },
     // getters:{
     //     name(state){
@@ -12,6 +12,12 @@ const store = createStore({
     mutations:{
         setName(state,data){
             state.name = data
+        }
+    },
+    actions:{
+        getName(context){
+            const name = 'webDev'
+            context.commit('setName',name)
         }
     }
 })
