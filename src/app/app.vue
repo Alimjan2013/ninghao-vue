@@ -1,5 +1,5 @@
 <template>
-  <h3>{{ name }}</h3>
+  <h3 @click="onClickName">{{ name }}</h3>
 </template>
 
 <script>
@@ -15,8 +15,17 @@ export default {
     // ...mapState({
       // appName:'name'
     // })
-    ...mapGetters(['name'])
+    // ...mapGetters(['name'])
 
+  },
+  methods:{
+    onClickName(){
+      if(this.$store.state.name ==='WebDev'){
+        this.$store.commit('setName',"web开发者")
+      }else{
+        this.$store.commit('setName',"WebDev")
+      }
+    }
   }
 };
 </script>

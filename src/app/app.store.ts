@@ -4,9 +4,14 @@ const store = createStore({
     state:{
         name:"WebDev"
     },
-    getters:{
-        name(state){
-            return'^^ ${state.name}'
+    // getters:{
+    //     name(state){
+    //         return'^^ ${state.name}'
+    //     }
+    // },
+    mutations:{
+        setName(state,data){
+            state.name = data
         }
     }
 })
