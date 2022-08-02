@@ -1,5 +1,9 @@
 <template>
-  <h3 @click="onClickName">{{ name }}</h3>
+  <!-- <h3 @click="onClickName">{{ name }}</h3> -->
+  <h3>
+    {{name}}
+    <span v-if="loading">加载中</span>
+  </h3>
 </template>
 
 <script>
@@ -15,7 +19,8 @@ export default {
     // ...mapState({
       // appName:'name'
     // })
-    // ...mapGetters(['name'])
+    ...mapGetters(['name'])
+    ...mapState(['loading'])
 
   },
   created(){
