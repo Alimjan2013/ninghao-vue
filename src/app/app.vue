@@ -3,12 +3,16 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
   data() {
     return {
-      name: '宁皓网',
+      
     };
   },
+  computed:{
+    ...mapState(['name'])
+  }
 };
 </script>
 
